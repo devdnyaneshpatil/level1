@@ -22,7 +22,7 @@ const Users=db.pgConn.define("Users",{
     },
     role: {
         type: DataTypes.ENUM("Buyer", "Seller"),
-        default:"Buyer"
+        defaultValue:"Buyer"
     }
 })
 
