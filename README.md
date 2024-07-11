@@ -32,7 +32,7 @@ Our Product management system is a streamlined platform where individuals can cr
 
 ## API Endpoints
 
--**BaseUrl** `https://user-manangement-2.onrender.com/api/v1`
+-**BaseUrl** `https://level1-6zbo.onrender.com/api/v1`
 
 ### Auth Routes
 
@@ -163,7 +163,7 @@ Our Product management system is a streamlined platform where individuals can cr
 email:- omkar@gmail.com
 password: Password@123
 
-- **Backend:** [https://user-manangement-2.onrender.com]
+- **Backend:** [https://level1-6zbo.onrender.com]
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
