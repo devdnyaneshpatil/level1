@@ -6,13 +6,14 @@ const {
   getProductController,
 } = require("../controllers/product.controllers");
 const auth = require("../middlewares/auth.middleware");
+const authorize = require("../middlewares/authorize.middleware");
 
 const productRouter = require("express").Router();
 
 //<<<<<<<<<<<<< only for Seller >>>>>>>>>>>>>>>>>>>>>//
-productRouter.post("/add", auth,addProductController);
-productRouter.patch("/:id", updateProductController);
-productRouter.delete("/:id", deleteProductController);
+productRouter.post("/add", auth,authorize(["Seller"]),addProductController);
+productRouter.patch("/:id",auth,authorize(["Seller"]), updateProductController);
+productRouter.delete("/:id",auth,authorize(["Seller"]), deleteProductController);
 
 //<<<<<<<<<<<<<  for both Seller and Buyer >>>>>>>>>>>>>>>>>>>>>//
 productRouter.get("/", getAllProductsController);

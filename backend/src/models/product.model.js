@@ -15,10 +15,6 @@ const Products = db.pgConn.define("Products", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
   description: {
     type: DataTypes.STRING,
   },
