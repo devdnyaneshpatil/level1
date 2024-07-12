@@ -37,9 +37,11 @@ const deleteProduct = async (id) => {
   return deletedProduct;
 };
 
-const getAllProducts = async (whereClause) => {
+const getAllProducts = async (whereClause,offset,limit) => {
   const products = await Products.findAll({
     where: whereClause,
+    offset,
+    limit
   });
   return products;
 };

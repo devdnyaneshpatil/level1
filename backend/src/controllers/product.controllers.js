@@ -66,7 +66,7 @@ const deleteProductController = async (req, res) => {
 };
 
 const getAllProductsController = async (req, res) => {
-  const { search } = req.query;
+  const { search,page=1,limit=0 } = req.query;
   try {
     let whereClause = {};
     //if search is present then modify the whereclause
@@ -78,7 +78,8 @@ const getAllProductsController = async (req, res) => {
         ],
       };
     }
-    const products = await productContext.getAllProducts(whereClause);
+    const offset=(page-1)*limit
+    const products = await productContext.getAllProducts(whereClause,offset,limit);
     return res.status(200).json({ data: products });
   } catch (error) {
     return res
